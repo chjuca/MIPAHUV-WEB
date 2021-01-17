@@ -38,4 +38,8 @@ export class ResourceViewComponent implements OnInit {
     });
   }
 
+  closeModal() {
+    this.modalRef.hide();
+  }
+
 }

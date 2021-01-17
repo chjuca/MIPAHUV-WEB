@@ -1,11 +1,14 @@
 <div class="p-5">
     <div>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
         <div class="row row-cols-2">
-            <div class="column col-8">
-                <h4 class="text-justify">{{resource.name}}</h4>
+            <div class="column col-9">
+                <h4>{{resource.name}}</h4>
                 <p class="lead medium">{{resource.subject}}</p>
             </div>
-            <div class="column col-4 align-items-center align-content-center">
+            <div class="column col-3 align-items-center align-content-center">
                 <div class="text-center">
                     <h3>{{average}}</h3>
                     <h6>Calificación</h6>
