@@ -21,7 +21,7 @@ export class ResourceFormComponent implements OnInit {
   isUploadSuccessful = false;
   resource = {} as Resource;
   resourceCopy = {} as Resource;
-  categories = ['video', 'documento']; // ... Agregar mas tipos
+  categories = ['video']; // ... Agregar mas tipos
   subjects = ['Programacion avanzada', 'Ingenieria de requisitos', 'Gestion de Proyectos']
   files = [];
   event: any;
