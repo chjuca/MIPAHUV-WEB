@@ -1,3 +1,4 @@
+import { ResourceViewComponent } from './../resource-view/resource-view.component';
 import { Subscription } from 'rxjs';
 import { ResourceFormComponent } from './../resource-form/resource-form.component';
 import { Resource } from './../../models/resources.interface';
@@ -47,6 +48,14 @@ export class ResourcesComponent implements OnInit {
       this.ngOnInit();
     });
   }
+
+  openModalResourceView(resource: Resource) {
+    const initialState = {
+      resource
+    }
+    this.modalRef = this.modalService.show(ResourceViewComponent, { class: 'modal-lg', initialState });
+  }
+
 
   confirm(): void {
     this.deleteResource();

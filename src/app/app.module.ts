@@ -1,8 +1,8 @@
+import { RatingModule } from 'ngx-bootstrap/rating';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,15 +17,17 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ResourceViewComponent } from './components/resource-view/resource-view.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ResourceFormComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    ResourceViewComponent
   ],
   imports: [
-    NgbModule,
+    RatingModule.forRoot(),
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -38,7 +40,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSliderModule,
     MatProgressSpinnerModule
   ],
-  entryComponents: [ResourceFormComponent],
+  entryComponents: [ResourceFormComponent, ResourceViewComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

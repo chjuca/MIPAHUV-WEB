@@ -1,0 +1,51 @@
+<div class="p-5">
+    <div>
+        <div class="row row-cols-2">
+            <div class="column col-8">
+                <h4 class="text-justify">{{resource.name}}</h4>
+                <p class="lead medium">{{resource.subject}}</p>
+            </div>
+            <div class="column col-4 align-items-center align-content-center">
+                <div class="text-center">
+                    <h3>{{average}}</h3>
+                    <h6>Calificación</h6>
+                    <a>&#9733;</a>
+                    <a>&#9733;</a>
+                    <a>&#9733;</a>
+                    <a>&#9733;</a>
+                    <a>&#9733;</a>
+                </div>
+            </div>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9">
+            <video controls>
+                <source
+                    src="https://firebasestorage.googleapis.com/v0/b/hipauhv.appspot.com/o/videos%2F01a1q2w5ufx3?alt=media&token=1bc649a7-b239-4482-b813-92355053082e"
+                    type="video/mp4">
+            </video>
+        </div>
+        <div>
+            <br>
+            <h5>Comentarios:</h5>
+            <br>
+            <div *ngIf="comments.length > 0; else nocomments">
+                <div *ngFor="let comment of comments">
+                    <div class="pl-3 pr-3">
+                        <p class="text-justify">{{comment.content}}</p>
+                        <div class="row justify-content-end">
+                            <small><strong>{{comment.user}}</strong></small>
+                            <pre> | </pre>
+                            <small>{{comment.createdAt.seconds*1000 | date: 'dd/MM/yyyy hh:mm a'}}</small>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <ng-template #nocomments>
+                <div class="justify-content-center align-content-center">
+                    <p class="text-center">Aún no ha registrado ningun comentario</p>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
