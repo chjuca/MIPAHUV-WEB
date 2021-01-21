@@ -26,16 +26,22 @@ export class ResourceViewComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.commentsService.getCommentsByResource(this.resource.id).subscribe(comments => {
+      console.log(comments);
       this.comments = comments
-    });
-    this.scoreService.getScoresByResource(this.resource.id).subscribe(scores => {
-      this.scores = scores;
       let sum = 0;
-      this.scores.forEach(score => {
-        sum += score.score;
+      this.comments.forEach(comment => {
+        sum += comment.score;
       })
-      this.average = sum / this.scores.length || 0;
+      this.average = sum / this.comments.length || 0;
     });
+    // this.scoreService.getScoresByResource(this.resource.id).subscribe(scores => {
+    //   this.scores = scores;
+    //   // let sum = 0;
+    //   // this.scores.forEach(score => {
+    //   //   sum += score.score;
+    //   // })
+    //   // this.average = sum / this.scores.length || 0;
+    // });
   }
 
   closeModal() {

@@ -1,11 +1,13 @@
-<div class="container" style="background-color: white; width: 70%; height: 34em; margin-top: 3em; margin-bottom: 5em;">
+<div class="container border-circle"
+  style="background-color: white; width: 75%; height: 85%; margin-top: 3em; margin-bottom: 3em;">
 
   <div class="row">
     <div class="col-8">
       <div class="row">
-        <h2 style=" padding:  0.5em;">Mis Recursos</h2>
+        <h2 class="pl-5 pt-3">Mis Recursos</h2>
       </div>
-      <div class="overflow-auto cards-wrapper selector" *ngIf="resources.length > 0; else noresources">
+      <div class="overflow-auto cards-wrapper selector justify-content-center"
+        *ngIf="resources.length > 0; else noresources">
 
         <div *ngFor="let resource of resources">
           <div class="card" style="margin: 1em;">
@@ -49,7 +51,7 @@
         </div>
       </ng-template>
     </div>
-    <div class="col-4">
+    <div class="col-4 row trans">
 
       <div class="row" style="padding: 1em;">
 
@@ -57,7 +59,8 @@
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </div>
       </div>
-      <div class="row" style="margin-top: 20em;margin-left: 3em; padding: 1em;">
+      <!-- <div class="row" style="margin-top: 20em;margin-left: 3em; padding: 1em;"> -->
+      <div class="row justify-content-center align-items-end">
         <!-- <a routerLink="/resource-form"><button type="button" class="btn btn-warning"><strong>Añadir
               recurso</strong></button></a> -->
         <button type="button" class="btn btn-warning" (click)="openModalResource({})"><strong>Añadir
@@ -65,22 +68,21 @@
       </div>
     </div>
   </div>
-</div>
 
-<ng-template #template>
-  <div class="modal-header">
-    <h4 class="modal-title" id="deleteResourceLabel">Eliminar recurso</h4>
-  </div>
-  <div class="modal-body">
-    <div class="container" style="background-color: white;">
-      <div class="mb-3 row">
-        <h6>¿Desea borrar este recurso?</h6>
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title" id="deleteResourceLabel">Eliminar recurso</h4>
+    </div>
+    <div class="modal-body">
+      <div class="container" style="background-color: white;">
+        <div class="mb-3 row">
+          <h6>¿Desea borrar este recurso?</h6>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="confirm()">Si</button>
-    <button type="button" class="btn btn-light" (click)="modalRef.hide()">No</button>
-  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="confirm()">Si</button>
+      <button type="button" class="btn btn-light" (click)="modalRef.hide()">No</button>
+    </div>
 
-</ng-template>
+  </ng-template>

@@ -3,6 +3,14 @@
   overflow-y: scroll;
 }
 
+.border-circle {
+  border-radius: 4%;
+}
+.trans {
+  display: flex;
+  justify-content: center;
+}
+
 .delete:hover {
   color: #a71930;
 } /* CSS link hover (green) */

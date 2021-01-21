@@ -17,12 +17,13 @@ export class CommentsService {
 
 
   constructor(public db: AngularFirestore) {
-    this.collectionNameResources = 'resources'
-    this.collectionNameComments = "comments";
+    this.collectionNameResources = 'commentaries'
+    //this.collectionNameComments = "comments";
   }
 
   getCommentsByResource(resourceID: string): Observable<Comment[]> {
-    this.commentsCollection = this.db.collection(this.collectionNameResources).doc(resourceID).collection(this.collectionNameComments);
+    this.commentsCollection = this.db.collection(this.collectionNameResources, ref => ref.where('resourceID', '==', resourceID))
+    //doc(resourceID).collection(this.collectionNameComments);
     this.comments = this.commentsCollection.snapshotChanges().pipe(map(action => {
       return action.map(a => {
         const data = a.payload.doc.data() as Comment
@@ -30,6 +31,7 @@ export class CommentsService {
         return data;
       })
     }))
+    console.log(this.comments);
     return this.comments;
   }
 }
