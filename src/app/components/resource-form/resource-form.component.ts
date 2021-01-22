@@ -22,7 +22,7 @@ export class ResourceFormComponent implements OnInit {
   resource = {} as Resource;
   resourceCopy = {} as Resource;
   categories = ['video']; // ... Agregar mas tipos
-  subjects = ['Programacion avanzada', 'Ingenieria de requisitos', 'Gestion de Proyectos']
+  subjects = ['NetBeans', 'Enterprise Architect', 'PostgreSQL']
   files = [];
   event: any;
   error = false;
