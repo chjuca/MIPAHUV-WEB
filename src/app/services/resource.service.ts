@@ -41,6 +41,8 @@ export class ResourceService {
 
   async addResource(resource: Resource) {
     resource.createdAt = new Date();
+    resource.name = resource.name.toLowerCase();
+    resource.subject = resource.subject.toLowerCase();
     this.resourcesCollection.add(resource).then(() => {
       this.isLoading.next(false);   // cambiamos el estado del observable
     });

@@ -13,7 +13,7 @@
           <div class="card" style="margin: 1em;">
             <div class="card-body">
 
-              <p class="card-text"> <strong>Recurso: </strong>{{resource.name}}</p>
+              <p class="card-text"> <strong>Recurso: </strong>{{resource.name.toUpperCase()}}</p>
               <p class="card-text"><strong>Fecha de publicación:
                 </strong>{{resource.createdAt.seconds*1000 | date: 'dd/MM/yyyy hh:mm a'}}
               </p>
